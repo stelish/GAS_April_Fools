@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>April Fools Test</title>
+
+    <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+</head>
+<body>
+
+<div class="af-main-div">
+    <style>
+        .active{
+            cursor: default;
+            background-color: transparent;
+            bottom: -3px;
+            background-color: rgba(0, 135, 82, 0);
+            background-image: -moz-linear-gradient(top, rgba(0, 135, 82, 0), rgba(0, 33, 20, 0.8));
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 135, 82, 0)), to(rgba(0, 33, 20, 0.8)));
+            background-image: -webkit-linear-gradient(top, rgba(0, 135, 82, 0), rgba(0, 33, 20, 0.8));
+            background-image: -o-linear-gradient(top, rgba(0, 135, 82, 0), rgba(0, 33, 20, 0.8));
+            background-image: linear-gradient(to top, rgba(0, 33, 20, 0.8), rgba(0, 135, 82, 0));
+            background-repeat: repeat-x;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00008752', endColorstr='#cc002114', GradientType=0);
+            -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00008752', endColorstr='#cc002114', GradientType=0);
+        }
+        .af-main-div{
+            margin: -15px;
+        }
+        .af-header-top{
+            height: 68px;
+            padding-top: 15px;
+            border-bottom: 1px solid #a7ff00;
+            background: #72bf44;
+        }
+        .af-header-bottom{
+            margin: 0 0 2px;
+            float: left;
+            display: block;
+            min-width: 100%;
+            overflow: visible;
+            position: relative;
+            z-index: 1200;
+            font-size: 12px;
+            border: none;
+            border-top: 1px solid #4d9621;
+            border-bottom: 1px solid #376c18;
+            -webkit-backface-visibility: hidden;
+            filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+            background-color: #4d9621;
+            height: 50px;
+        }
+
+        .af-ul{
+            margin-top: 130px;
+            list-style: none;
+            position: relative;
+        }
+
+        .af-li{
+            width: 330px;
+            padding: 15px;
+            border: solid 1px #999;
+        }
+
+        .main-nav{
+            height: 62px;
+            margin-top: -15px;
+        }
+        .main-nav a{
+            color: #ffffff;
+            line-height: 46px;
+            font-weight: bold;
+            padding-top: 25px !important;
+        }
+        .main-nav:hover{
+            background-color: none;
+        }
+    </style>
+    <!-- header -->
+    <section class="af-header-top col-md-12">
+        <div class="container">
+
+        </div>
+    </section>
+    <section class="af-header-bottom col-md-12">
+        <div class="container">
+            <div class="collapse navbar-collapse hide">
+                <ul class="nav navbar-nav menu" id="leftNavList">
+                    <li class="main-nav active"><a ng-href="https://grabaseat.co.nz/flights" target="_self">home</a></li>
+                    <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">lounge</a></li>
+                    <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">dinning</a></li>
+                    <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">outdoor</a></li>
+                    <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">office</a></li>
+                    <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">industrial</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+    <!-- body -->
+    <div class="af-body" ng-controller="afController">
+        <script>
+            var afapp = angular.module('afapp',[]);
+            afapp.controller('afController',['$scope',function($scope){
+                        $scope.afdata = [
+                            {
+                                title : 'Hammocks',
+                                imgsrc : 'img/hammock.jpeg',
+                                'caption' : ''
+
+                            },
+                            {
+                                title : 'Ski-Lift Chair',
+                                imgsrc : 'img/ski-lift-header.png',
+                                'caption' : ''
+
+                            },
+                            {
+                                title : 'Cane Chair',
+                                imgsrc : 'img/download.jpeg',
+                                'caption' : ''
+
+                            }
+                        ];
+                    }]);
+
+
+        </script>
+        <div class="container">
+            <ul class="af-ul">
+                <li class="af-li" ng-repeat="item in afdata">
+                    <div class="af-li-inner">
+                        <div class="af-li-title">
+                            Hammocks
+                        </div>
+                        <img src="img/hammock.jpeg">
+                        <div class="af-li-caption">
+                            {{item.caption}}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
