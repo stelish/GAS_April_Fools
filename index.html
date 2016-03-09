@@ -62,15 +62,60 @@
         }
 
         .af-ul{
-            margin-top: 130px;
             list-style: none;
             position: relative;
+            display: inline-flex;
+            flex-wrap: wrap;
         }
 
         .af-li{
             width: 330px;
             padding: 15px;
-            border: solid 1px #999;
+            border: solid 1px #eee;
+        }
+
+        .af-li-inner img{
+            display: block;
+            max-width: 100%;
+            height: auto;
+            max-height: 175px;
+            margin: 0 auto;
+        }
+
+        .af-li-title{
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .af-li-title a{
+            font-size: large;
+            font-weight: bold;
+            color: #005b9c;
+            text-decoration: none;
+        }
+
+        .af-li-price{
+            font-size: x-large;
+            display: inline-flex;
+        }
+
+        .af-li-price-dollar{
+            font-size: 11px;
+            margin-top: 5px;
+            padding: 1px;
+        }
+        .af-li-btn{
+            width: 100%;
+            border-radius: 6px;
+            height: 35px;
+            background-color: #3da301;
+            border-color: #3da301;
+            color: #ffffff;
+            text-shadow: 0 -1px 0 #32750e;
+            font-weight: 700;
+            text-align: center;
+            padding: 5px;
+            margin-top: 15px;
         }
 
         .main-nav{
@@ -138,16 +183,107 @@
 
         </script>
         <div class="container">
+            <nav>
+                <ul class="pagination pagination-lg">
+                    <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                </ul>
+            </nav>
             <ul class="af-ul">
                 <li class="af-li" ng-repeat="item in afdata">
                     <div class="af-li-inner">
-                        <div class="af-li-title">
-                            Hammocks
-                        </div>
                         <img src="img/hammock.jpeg">
+
+                        <div class="af-li-title">
+                            <a title="Hammocks">Hammocks</a>
+                        </div>
+
+                        <div class="af-li-price">
+                            <div class="af-li-price-dollar">$</div>599
+                        </div>
+
                         <div class="af-li-caption">
                             {{item.caption}}
                         </div>
+
+                        <div class="af-li-btn">add to cart</div>
+                    </div>
+                </li>
+                <li class="af-li" ng-repeat="item in afdata">
+                    <div class="af-li-inner">
+                        <img src="img/ski-lift-header.png">
+
+                        <div class="af-li-title">
+                            <a title="SkiLift Chair">Ski Lift Chair</a>
+                        </div>
+
+                        <div class="af-li-price">
+                            <div class="af-li-price-dollar">$</div>599
+                        </div>
+
+                        <div class="af-li-caption">
+                            {{item.caption}}
+                        </div>
+                        <div class="af-li-btn">add to cart</div>
+                    </div>
+                </li>
+                <li class="af-li" ng-repeat="item in afdata">
+                    <div class="af-li-inner">
+                        <img src="img/download.jpeg">
+
+                        <div class="af-li-title">
+                            <a title="Cane Chair">Cane Chair</a>
+                        </div>
+
+                        <div class="af-li-price">
+                            <div class="af-li-price-dollar">$</div>599
+                        </div>
+
+                        <div class="af-li-caption">
+                            {{item.caption}}
+                        </div>
+                        <div class="af-li-btn">add to cart</div>
+                    </div>
+                </li>
+                <li class="af-li" ng-repeat="item in afdata">
+                    <div class="af-li-inner">
+                        <img src="img/hammock.jpeg">
+
+                        <div class="af-li-title">
+                            <a title="Hammocks">Hammocks</a>
+                        </div>
+
+                        <div class="af-li-price">
+                            <div class="af-li-price-dollar">$</div>599
+                        </div>
+
+                        <div class="af-li-caption">
+                            {{item.caption}}
+                        </div>
+                        <div class="af-li-btn">add to cart</div>
+                    </div>
+                </li>
+                <li class="af-li" ng-repeat="item in afdata">
+                    <div class="af-li-inner">
+                        <img src="img/hammock.jpeg">
+
+                        <div class="af-li-title">
+                            <a title="Hammocks">Hammocks</a>
+                        </div>
+
+                        <div class="af-li-price">
+                            <div class="af-li-price-dollar">$</div>599
+                        </div>
+
+                        <div class="af-li-caption">
+                            {{item.caption}}
+                        </div>
+                        <div class="af-li-btn">add to cart</div>
                     </div>
                 </li>
             </ul>
