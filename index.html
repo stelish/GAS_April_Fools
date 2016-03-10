@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -16,10 +18,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 
 </head>
-<body>
+<body class="af-main-body">
 
-<div class="af-main-div">
+<div class="af-main-div" ng-app="afapp">
     <style>
+        @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+        .af-main-body{
+            background: #f5f5f5;
+        }
         .active{
             cursor: default;
             background-color: transparent;
@@ -50,7 +56,6 @@
             min-width: 100%;
             overflow: visible;
             position: relative;
-            z-index: 1200;
             font-size: 12px;
             border: none;
             border-top: 1px solid #4d9621;
@@ -69,9 +74,10 @@
         }
 
         .af-li{
-            width: 330px;
+            width: 290px;
             padding: 15px;
             border: solid 1px #eee;
+            background: #fff;
         }
 
         .af-li-inner img{
@@ -85,6 +91,7 @@
         .af-li-title{
             margin-top: 15px;
             margin-bottom: 5px;
+            min-height: 50px;
         }
 
         .af-li-title a{
@@ -118,6 +125,35 @@
             margin-top: 15px;
         }
 
+        .af-pagination{
+            text-align:center;
+        }
+        .af-pagination li{
+            display: inline;
+        }
+        .af-pagination li a{
+            display: inline-block;
+        }
+
+        .af-logo-container{
+            padding-top: 5px;
+            padding-left: 10px;
+        }
+
+        .af-logo-container img{
+            max-height: 35px;
+            width: auto;
+        }
+
+        .af-slogan{
+            font-family: 'Indie Flower', cursive;
+            color: #fff;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+
+
         .main-nav{
             height: 62px;
             margin-top: -15px;
@@ -135,13 +171,19 @@
     <!-- header -->
     <section class="af-header-top col-md-12">
         <div class="container">
+            <div class="af-logo-container pull-left">
+                <img src="img/vgrablogohorizontal.png">
+            </div>
+            <div class="af-slogan pull-right">
+                Seat's for furniture lovers!
+            </div>
 
         </div>
     </section>
     <section class="af-header-bottom col-md-12">
         <div class="container">
             <div class="collapse navbar-collapse hide">
-                <ul class="nav navbar-nav menu" id="leftNavList">
+                <ul class="nav navbar-nav menu">
                     <li class="main-nav active"><a ng-href="https://grabaseat.co.nz/flights" target="_self">home</a></li>
                     <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">lounge</a></li>
                     <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">dinning</a></li>
@@ -150,147 +192,240 @@
                     <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">industrial</a></li>
                 </ul>
             </div>
+            <!--<div class="collapse navbar-collapse hide">-->
+                <!--<ul class="nav navbar-nav menu pull-right">-->
+                    <!--<li class="main-nav active"><a ng-href="https://grabaseat.co.nz/flights" target="_self">signup</a></li>-->
+                    <!--<li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">login</a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
 
         </div>
     </section>
     <!-- body -->
-    <div class="af-body" ng-controller="afController">
-        <script>
-            var afapp = angular.module('afapp',[]);
-            afapp.controller('afController',['$scope',function($scope){
-                        $scope.afdata = [
-                            {
-                                title : 'Hammocks',
-                                imgsrc : 'img/hammock.jpeg',
-                                'caption' : ''
+    <div class="af-body col-md-12" ng-controller="afController">
+        <div class="container" ng-if="!showPrank" style="margin-top: 30px">
 
-                            },
-                            {
-                                title : 'Ski-Lift Chair',
-                                imgsrc : 'img/ski-lift-header.png',
-                                'caption' : ''
+            <!-- breadcrumbs -->
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li>specials</li>
+                </ol>
+            </div>
 
-                            },
-                            {
-                                title : 'Cane Chair',
-                                imgsrc : 'img/download.jpeg',
-                                'caption' : ''
+            <div class="col-md-2">
+                <style>
+                    .af-fake-vertical-banner{
+                        min-width: 100%;
+                        height: 300px;
+                        background-color: blueviolet;
+                    }
+                    .af-fake-vertical-banner div{
+                        margin-top: 30px;
+                        padding-top: 50px;
+                        font-family: 'Indie Flower', cursive;
+                        font-size: 50px;
+                        font-weight: 700;
+                        color: #fff;
+                        text-align: center;
+                    }
+                    .af-fake-horizontal-banner{
+                        min-width: 100%;
+                        height: 100px;
+                        background-color: #1e83ad;
+                    }
+                    .af-fake-horizontal-banner div{
+                        padding-top: 15px;
+                        font-family: 'Indie Flower', cursive;
+                        font-size: 50px;
+                        font-weight: 700;
+                        color: #fff;
+                        text-align: center;
+                    }
+                    .af-fake-selection-bar{
+                        margin-bottom: 30px;
+                    }
+                </style>
 
-                            }
-                        ];
-                    }]);
 
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <span class="glyphicon glyphicon-tag" style="color: red;font-size: 20px;"></span> specials
+                    </a>
+                    <a href="#" class="list-group-item">lounge</a>
+                    <a href="#" class="list-group-item">outdoor</a>
+                    <a href="#" class="list-group-item">dinning</a>
+                    <a href="#" class="list-group-item">office</a>
+                </div>
+                <!-- banner ad -->
+                <div class="af-fake-vertical-banner">
+                    <div>Fake Banner Ad!</div>
+                </div>
 
-        </script>
-        <div class="container">
-            <nav>
-                <ul class="pagination pagination-lg">
-                    <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+            </div>
+            <!-- deals -->
+            <div class="col-md-10">
+                <!-- vertical banner -->
+                <div class="af-fake-horizontal-banner">
+                    <div>Fake Banner Ad!</div>
+                </div>
+                <!-- pagination -->
+                <nav class="af-pagination">
+                    <ul class="pagination">
+                        <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                    </ul>
+                </nav>
+
+                <!-- selection bars -->
+                <div class="af-fake-selection-bar col-md-12">
+
+                    <style>
+                        .af-fake-selection-content{
+                            display: inline-flex;
+                        }
+                        .af-li-img-div{
+                            min-height:175px;
+                        }
+                    </style>
+
+                    <div class="af-fake-selection-content col-md-6 pull-left">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Latest Seat Specials
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                <li><a href="#">Latest Seat Specials</a></li>
+                                <li><a href="#">Older Seat Specials</a></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-default">
+                            <span class="glyphicon glyphicon-th-large"></span>
+                        </button>
+                        <button class="btn btn-default">
+                            <span class="glyphicon glyphicon-th-list"></span>
+                        </button>
+                    </div>
+
+                    <div class="col-md-6 af-fake-selection-content pull-right" style="text-align: right">
+                        {{afdata.length}} products
+                    </div>
+
+                </div>
+
+                <ul class="af-ul">
+                    <li class="af-li" ng-repeat="item in afdata" data-toggle="modal" data-target="#myModal">
+                        <div class="af-li-inner">
+                            <div class="af-li-img-div">
+                                <img ng-src="{{item.imgsrc}}">
+                            </div>
+
+                            <div class="af-li-title">
+                                <a title="item.title">{{item.title}}</a>
+                            </div>
+
+                            <div class="af-li-price">
+                                <div class="af-li-price-dollar">$</div>{{item.price}}
+                            </div>
+
+                            <div class="af-li-caption">
+                                {{item.caption}}
+                            </div>
+
+                            <div class="af-li-btn">add to cart</div>
+                        </div>
+                    </li>
                 </ul>
-            </nav>
-            <ul class="af-ul">
-                <li class="af-li" ng-repeat="item in afdata">
-                    <div class="af-li-inner">
-                        <img src="img/hammock.jpeg">
-
-                        <div class="af-li-title">
-                            <a title="Hammocks">Hammocks</a>
-                        </div>
-
-                        <div class="af-li-price">
-                            <div class="af-li-price-dollar">$</div>599
-                        </div>
-
-                        <div class="af-li-caption">
-                            {{item.caption}}
-                        </div>
-
-                        <div class="af-li-btn">add to cart</div>
-                    </div>
-                </li>
-                <li class="af-li" ng-repeat="item in afdata">
-                    <div class="af-li-inner">
-                        <img src="img/ski-lift-header.png">
-
-                        <div class="af-li-title">
-                            <a title="SkiLift Chair">Ski Lift Chair</a>
-                        </div>
-
-                        <div class="af-li-price">
-                            <div class="af-li-price-dollar">$</div>599
-                        </div>
-
-                        <div class="af-li-caption">
-                            {{item.caption}}
-                        </div>
-                        <div class="af-li-btn">add to cart</div>
-                    </div>
-                </li>
-                <li class="af-li" ng-repeat="item in afdata">
-                    <div class="af-li-inner">
-                        <img src="img/download.jpeg">
-
-                        <div class="af-li-title">
-                            <a title="Cane Chair">Cane Chair</a>
-                        </div>
-
-                        <div class="af-li-price">
-                            <div class="af-li-price-dollar">$</div>599
-                        </div>
-
-                        <div class="af-li-caption">
-                            {{item.caption}}
-                        </div>
-                        <div class="af-li-btn">add to cart</div>
-                    </div>
-                </li>
-                <li class="af-li" ng-repeat="item in afdata">
-                    <div class="af-li-inner">
-                        <img src="img/hammock.jpeg">
-
-                        <div class="af-li-title">
-                            <a title="Hammocks">Hammocks</a>
-                        </div>
-
-                        <div class="af-li-price">
-                            <div class="af-li-price-dollar">$</div>599
-                        </div>
-
-                        <div class="af-li-caption">
-                            {{item.caption}}
-                        </div>
-                        <div class="af-li-btn">add to cart</div>
-                    </div>
-                </li>
-                <li class="af-li" ng-repeat="item in afdata">
-                    <div class="af-li-inner">
-                        <img src="img/hammock.jpeg">
-
-                        <div class="af-li-title">
-                            <a title="Hammocks">Hammocks</a>
-                        </div>
-
-                        <div class="af-li-price">
-                            <div class="af-li-price-dollar">$</div>599
-                        </div>
-
-                        <div class="af-li-caption">
-                            {{item.caption}}
-                        </div>
-                        <div class="af-li-btn">add to cart</div>
-                    </div>
-                </li>
-            </ul>
-
+            </div>
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<style>
+    .modal-dialog {
+        width: 615px !important;
+        margin: 75px auto !important;
+    }
+</style>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <img src="img/Latest-April-Fools-2016-Jokes-Funny-Pranks-for-Boyfriend-Couples-Through-Text.jpg" class="thumbnail">
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    var afapp = angular.module('afapp',[]);
+    afapp.controller('afController',['$scope',function($scope){
+        $scope.showPrank = false;
+        $scope.dealCaption = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' +
+        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ';
+
+        $scope.afdata = [
+            {
+                title : 'Multi-Couloured Hammock',
+                imgsrc : 'img/hammock.jpeg',
+                caption : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+                price : '599',
+                type : 'snow'
+            },
+            {
+                title : 'Industrial Ski-Lift Chair',
+                imgsrc : 'img/ski-lift-header.png',
+                caption : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+                price : '599',
+                type : 'snow'
+            },
+            {
+                title : 'Monza Cane Chair',
+                imgsrc : 'img/download.jpeg',
+                caption : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+                price : '99',
+                type : 'mediterrainian'
+
+            },
+            {
+                title : 'Rattan Single Lounger with side table',
+                imgsrc : 'img/outdoor_lounger.jpg',
+                caption : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+                price : '99',
+                type : 'islands'
+
+            },
+            {
+                title : 'Lilly Lounge Chair',
+                imgsrc : 'img/ski-lift-header.png',
+                caption : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+                price : '99',
+                type : 'city'
+
+            },
+            {
+                title : 'Stylish Bar Stool',
+                imgsrc : 'img/bar_stool_grey.jpg',
+                caption : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+                price : '99',
+                type : 'aussie'
+            }
+        ];
+
+        $scope.dealClicked = function(){
+            $scope.showPrank = true;
+        };
+    }]);
+
+
+</script>
 
 
 
