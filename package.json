@@ -1,0 +1,29 @@
+{
+  "name": "gas-april-fools",
+  "version": "1.0.0",
+  "description": "april fools promo",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stelish/GAS_April_Fools.git"
+  },
+  "author": "Steve Kelly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stelish/GAS_April_Fools/issues"
+  },
+  "homepage": "https://github.com/stelish/GAS_April_Fools#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-angular-templates": "^1.0.3",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-htmlmin": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-generate": "^0.3.2",
+    "grunt-init": "^0.3.2",
+    "time-grunt": "^1.3.0"
+  }
+}
