@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- loading overlay -->
+<div id="af-loading" style="position: absolute;height: 100%;width: 100%;z-index: 250001;background: #f5f5f5;"></div>
 <div class="af-main-body">
     <div class="af-main-div">
         <style>
@@ -29,7 +33,7 @@
                 background: #72bf44;
             }
             .af-header-bottom{
-                margin: 0 0 2px;
+                margin: 0;
                 float: left;
                 display: block;
                 min-width: 100%;
@@ -50,10 +54,11 @@
                 position: relative;
                 flex-wrap: wrap;
                 padding-top:25px;
+                display: inline-flex;
             }
 
             .af-li{
-                width: 290px;
+                width: 305px;
                 padding: 15px;
                 border: solid 1px #eee;
                 background: #fff;
@@ -117,6 +122,7 @@
             .af-logo-container{
                 padding-top: 5px;
                 padding-left: 10px;
+                display: inline-flex;
             }
 
             .af-logo-container img{
@@ -127,7 +133,7 @@
             .af-slogan{
                 font-family: 'Indie Flower', cursive;
                 color: #fff;
-                font-size: 20px;
+                font-size: 22px;
                 margin-top: 15px;
             }
 
@@ -145,38 +151,133 @@
             .main-nav:hover{
                 background-color: none;
             }
+
+            .af-header-extras{
+                display: inline-flex;
+                padding: 13px;
+                color: white;
+                font-size: 25px;
+            }
+            .breadcrumb {
+                padding: 12px 15px;
+                list-style: none;
+                border-radius: 4px;
+                background-color: rgba(0,0,0,0);
+                color: #337ab7;
+                font-size: 18px;
+            }
+            .breadcrumb>li {
+                display: inline-block;
+            }
+            .breadcrumb a {
+                color: #337ab7;
+                text-decoration: none;
+            }
+
+            .breadcrumb>li+li:before {
+                padding: 0 5px 0 10px;
+                color: #337ab7;
+                content: "/\00a0";
+                font-size: 20px;
+            }
+
+            .glyphicon-shopping-cart{
+                margin-right: 8px;
+                font-size: 24px;
+            }
+            .af-cart-chip{
+                display: inline-flex;
+                padding: 6px 12px;
+                color: white;
+                background-color: #3da301;
+                border-top-right-radius: 12px;
+                border-bottom-right-radius: 12px;
+                border-top-left-radius: 12px;
+            }
+            .af-header-info{
+                -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+                -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+                box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+                height: 60px;
+                background-color: #f5f5f5;
+                padding-top: 10px;
+            }
+
+            @media (max-width: 992px) {
+                .af-header-info{
+                    height: 30px;
+                    padding-top: 10px;
+                }
+                .af-fake-horizontal-banner{
+                    margin-top: 20px;
+                }
+            }
+
+            .glyphicon-align-justify{
+                color:white;
+                font-size: 24px;
+            }
+
+            .af-menu-btn{
+                padding-top: 7px;
+                margin-right: 7px;
+            }
+
+
         </style>
+        <!--
         <!-- header -->
         <section class="af-header-top col-md-12">
             <div class="container">
+
                 <div class="af-logo-container pull-left">
-                    <img ng-src="/resource/{[{imageList.gas_logo}]}">
+                    <div class="af-menu-btn hidden-md hidden-lg" onclick="toggleAFSlider()"><span class="glyphicon glyphicon-align-justify"></span></div>
+                    <img src="https://grabaseat.co.nz/resource/fef7ae4a-876c-4c3c-b448-5a27cd27e0be">
                 </div>
                 <div class="af-slogan pull-right">
                     Seat's for furniture lovers!
                 </div>
             </div>
         </section>
-        <section class="af-header-bottom col-md-12">
+        <section class="af-header-bottom col-md-12 hidden-sm hidden-xs">
             <div class="container">
                 <div class="collapse navbar-collapse hide">
                     <ul class="nav navbar-nav menu">
-                        <li class="main-nav active"><a ng-href="https://grabaseat.co.nz/flights" target="_self">home</a></li>
-                        <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">lounge</a></li>
-                        <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">dinning</a></li>
-                        <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">outdoor</a></li>
-                        <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">office</a></li>
-                        <li class="main-nav"><a ng-href="https://grabaseat.co.nz/flights" target="_self">industrial</a></li>
+                        <li class="main-nav active"><a href="https://grabaseat.co.nz/flights" target="_self">home</a></li>
+                        <li class="main-nav"><a href="https://grabaseat.co.nz/flights" target="_self">lounge</a></li>
+                        <li class="main-nav"><a href="https://grabaseat.co.nz/flights" target="_self">dinning</a></li>
+                        <li class="main-nav"><a href="https://grabaseat.co.nz/flights" target="_self">outdoor</a></li>
+                        <li class="main-nav"><a href="https://grabaseat.co.nz/flights" target="_self">office</a></li>
+                        <li class="main-nav"><a href="https://grabaseat.co.nz/flights" target="_self">industrial</a></li>
                     </ul>
+                </div>
+            </div>
+        </section>
+        <section class="col-md-12 af-header-info">
+            <div class="container">
+                <ol class="breadcrumb pull-left">
+                    <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li>specials</li>
+                </ol>
+                <div class="pull-right">
+                    <div class="af-cart-chip">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        <div style="font-size: 18px;padding-top: 3px;">0 items in cart</div>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- body -->
         <div class="af-body col-md-12">
-            <div class="container" ng-if="!showPrank" style="margin-top: 30px">
+            <div class="container" style="margin-top: 30px;">
                 <!-- breadcrumbs -->
                 <div class="col-md-12">
                     <style>
+                        .af-body{
+                            -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+                            -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+                            box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+                        }
                         .glyphicon {
                             position: relative;
                             top: 1px;
@@ -188,26 +289,9 @@
                             -webkit-font-smoothing: antialiased;
                             -moz-osx-font-smoothing: grayscale;
                         }
-                        .breadcrumb {
-                            padding: 8px 15px;
-                            margin-top: 30px;
-                            margin-bottom: 20px;
-                            list-style: none;
-                            background-color: #f5f5f5;
-                            border-radius: 4px;
-                        }
-                        .breadcrumb>li {
-                            display: inline-block;
-                        }
-                        .breadcrumb a {
-                            color: #337ab7;
-                            text-decoration: none;
-                        }
                     </style>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-                        <li>specials</li>
-                    </ol>
+
+
                 </div>
                 <div class="col-md-2">
                     <style>
@@ -239,7 +323,7 @@
                             text-align: center;
                         }
                         .af-fake-selection-bar{
-                            margin-bottom: 30px;
+                            margin: 15px 0;
                         }
 
                         .list-group-item:first-child {
@@ -265,7 +349,7 @@
                             color: #555;
                         }
                     </style>
-                    <div class="list-group">
+                    <div class="list-group hidden-sm hidden-xs">
                         <a href="#" class="list-group-item">
                             <span class="glyphicon glyphicon-tag" style="color: red;font-size: 20px;"></span> specials
                         </a>
@@ -275,7 +359,7 @@
                         <a href="#" class="list-group-item">office</a>
                     </div>
                     <!-- banner ad -->
-                    <div class="af-fake-vertical-banner">
+                    <div class="af-fake-vertical-banner hidden-sm hidden-xs">
                         <div>Fake Banner Ad!</div>
                     </div>
                 </div>
@@ -285,68 +369,19 @@
                     <div class="af-fake-horizontal-banner">
                         <div>Fake Banner Ad!</div>
                     </div>
-                    <!-- pagination -->
-                    <nav class="af-pagination">
-                        <style>
-                            .pagination {
-                                display: inline-block;
-                                padding-left: 0;
-                                margin: 20px 0;
-                                border-radius: 4px;
-                            }
-                            .af-pagination li {
-                                display: inline;
-                            }
-                            .af-pagination li a {
-                                display: inline-block;
-                            }
-                            .pagination>li:first-child>a, .pagination>li:first-child>span {
-                                margin-left: 0;
-                                border-top-left-radius: 4px;
-                                border-bottom-left-radius: 4px;
-                            }
-                            .pagination>li>a, .pagination>li>span {
-                                position: relative;
-                                float: left;
-                                padding: 6px 12px;
-                                margin-left: -1px;
-                                line-height: 1.42857143;
-                                color: #337ab7;
-                                text-decoration: none;
-                                background-color: #fff;
-                                border: 1px solid #ddd;
-                            }
-                            .pagination>li>a, .pagination>li>span {
-                                position: relative;
-                                float: left;
-                                padding: 6px 12px;
-                                margin-left: -1px;
-                                line-height: 1.42857143;
-                                color: #337ab7;
-                                text-decoration: none;
-                                background-color: #fff;
-                                border: 1px solid #ddd;
-                            }
-                        </style>
-                        <ul class="pagination">
-                            <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                        </ul>
-                    </nav>
+
                     <!-- selection bars -->
                     <div class="af-fake-selection-bar col-md-12">
                         <style>
                             .af-fake-selection-content{
                                 display: inline-flex;
+                                padding:0;
+                                margin-left: -15px;
                             }
                             .af-li-img-div{
                                 min-height:175px;
                             }
+
                         </style>
                         <div class="af-fake-selection-content col-md-6 pull-left">
                             <style>
@@ -398,7 +433,6 @@
                                     -webkit-background-clip: padding-box;
                                     background-clip: padding-box;
                                     border: 1px solid #ccc;
-                                    border: 1px solid rgba(0,0,0,.15);
                                     border-radius: 4px;
                                     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
                                     box-shadow: 0 6px 12px rgba(0,0,0,.175);
@@ -421,30 +455,206 @@
                                 <span class="glyphicon glyphicon-th-list"></span>
                             </button>
                         </div>
-                        <div class="col-md-6 af-fake-selection-content pull-right" style="text-align: right">
-                            {[{afdata.length}]} products
+                        <div class="col-md-6" style="text-align: right;padding:0; padding-top: 10px;">
+                            6 products
                         </div>
                     </div>
+                    <style>
+                        .af-li-price-container{
+                            display: inline-flex;
+                        }
+                        .af-price-chip{
+                            display: inline-flex;
+                            padding: 4px 8px;
+                            margin: 5px;
+                            color: white;
+                            background-color: red;
+                            border-top-right-radius: 8px;
+                            border-bottom-right-radius: 8px;
+                            border-top-left-radius: 8px;
+                            font-size: 10px;
+                            font-weight: bold;
+                            height: 20px;
+                        }
+                    </style>
                     <ul class="af-ul">
-                        <li class="af-li" ng-repeat="item in afdata" data-toggle="modal" data-target="#myModal">
+                        <li class="af-li" data-toggle="modal" data-target="#myModal">
                             <div class="af-li-inner">
-                                <div class="af-li-img-div"><img src="{[{item.imgsrc}]}"></div>
-                                <div class="af-li-title"><a title="item.title">{[{item.title}]}</a></div>
-                                <div class="af-li-price"><div class="af-li-price-dollar">$</div>{[{item.price}]}</div>
+                                <div class="af-li-img-div"><img src="https://grabaseat.co.nz/resource/695396f7-438b-4d61-8b38-e8b0a622eb24"></div>
+                                <div class="af-li-title"><a title="Multi-Couloured Hammock">Multi-Couloured Hammock</a></div>
+                                <div class="af-li-price-container">
+                                    <div class="af-li-price"><div class="af-li-price-dollar">$</div>59</div>
+                                    <div class="af-price-chip">hot deal!</div>
+                                </div>
                                 <div class="af-li-caption">
-                                    {[{item.caption}]}
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 </div>
 
                                 <div class="af-li-btn">add to cart</div>
                             </div>
                         </li>
+
+                        <li class="af-li" data-toggle="modal" data-target="#myModal">
+                            <div class="af-li-inner">
+                                <div class="af-li-img-div"><img src="https://grabaseat.co.nz/resource/bf5642a1-aa26-4bce-9903-c8c0150e0c0e"></div>
+                                <div class="af-li-title"><a title="Industrial Ski-Lift Chair">Industrial Ski-Lift Chair</a></div>
+                                <div class="af-li-price-container">
+                                    <div class="af-li-price"><div class="af-li-price-dollar">$</div>599</div>
+                                    <div class="af-price-chip">bargain</div>
+                                </div>
+
+                                <div class="af-li-caption">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </div>
+
+                                <div class="af-li-btn">add to cart</div>
+                            </div>
+                        </li>
+
+                        <li class="af-li" data-toggle="modal" data-target="#myModal">
+                            <div class="af-li-inner">
+                                <div class="af-li-img-div"><img src="https://grabaseat.co.nz/resource/d921720a-dac2-482b-a216-47198d75aa1a"></div>
+                                <div class="af-li-title"><a title="Monza Cane Chair">Monza Cane Chair</a></div>
+                                <div class="af-li-price-container">
+                                    <div class="af-li-price"><div class="af-li-price-dollar">$</div>99</div>
+                                </div>
+                                <div class="af-li-caption">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </div>
+
+                                <div class="af-li-btn">add to cart</div>
+                            </div>
+                        </li>
+
+                        <li class="af-li" data-toggle="modal" data-target="#myModal">
+                            <div class="af-li-inner">
+                                <div class="af-li-img-div"><img src="https://grabaseat.co.nz/resource/b5a7970f-72c5-416e-8fad-e5ae6c2e4384"></div>
+                                <div class="af-li-title"><a title="Rattan Single Lounger with side table">Rattan Single Lounger with side table</a></div>
+                                <div class="af-li-price-container">
+                                    <div class="af-li-price"><div class="af-li-price-dollar">$</div>299</div>
+                                    <div class="af-price-chip">cracker!</div>
+                                </div>
+
+                                <div class="af-li-caption">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </div>
+
+                                <div class="af-li-btn">add to cart</div>
+                            </div>
+                        </li>
+
+                        <li class="af-li" data-toggle="modal" data-target="#myModal">
+                            <div class="af-li-inner">
+                                <div class="af-li-img-div"><img src="https://grabaseat.co.nz/resource/02b40214-5baa-4925-ad9a-6e7feffe74c6"></div>
+                                <div class="af-li-title"><a title="Stylish Bar Stool">Stylish Bar Stool</a></div>
+                                <div class="af-li-price"><div class="af-li-price-dollar">$</div>99</div>
+                                <div class="af-li-caption">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </div>
+
+                                <div class="af-li-btn">add to cart</div>
+                            </div>
+                        </li>
+
+                        <li class="af-li" data-toggle="modal" data-target="#myModal">
+                            <div class="af-li-inner">
+                                <div class="af-li-img-div"><img src="https://grabaseat.co.nz/resource/8c047a6c-1110-4c63-82ef-321eb4322d68"></div>
+                                <div class="af-li-title"><a title="Lilly Lounge Chair">Lilly Lounge Chair</a></div>
+                                <div class="af-li-price-container">
+                                    <div class="af-li-price"><div class="af-li-price-dollar">$</div>199</div>
+                                    <div class="af-price-chip">awesome</div>
+                                </div>
+
+                                <div class="af-li-caption">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </div>
+
+                                <div class="af-li-btn">add to cart</div>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+    <style>
+        .af-slider{
+            width: 270px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 250001;
+            background-color: #333;
+        }
+
+        .af-slider img{
+            height: 35px;
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+
+        .af-slider ul{
+            list-style: none;
+            padding-left: 0;
+            margin-top:20px;
+        }
+
+        .af-slider li{
+            border-bottom: solid 1px #222;
+            padding: 20px 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .af-slider li a{
+            color: white;
+            font-size: 14px;
+        }
+
+        .af-slider-out{
+            transition: all 0.3s ease-out;
+            -webkit-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+        }
+
+        .af-slider-in{
+            transition: all 0.3s ease-out;
+            -webkit-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            transform: translate3d(-270px, 0, 0);
+            -moz-transform: translate3d(-270px, 0, 0);
+            -webkit-transform: translate3d(-270px, 0, 0);
+            -ms-transform: translate3d(-270px, 0, 0);
+            -o-transform: translate3d(-270px, 0, 0);
+        }
+
+    </style>
+    <!-- slider -->
+    <div id="af-slider" class="af-slider af-slider-in" onclick="toggleAFSlider()">
+        <img src="https://grabaseat.co.nz/resource/fef7ae4a-876c-4c3c-b448-5a27cd27e0be">
+        <ul>
+            <li><a href="https://grabaseat.co.nz/flights" target="_self">home</a></li>
+            <li><a href="https://grabaseat.co.nz/flights" target="_self">lounge</a></li>
+            <li><a href="https://grabaseat.co.nz/flights" target="_self">dinning</a></li>
+            <li><a href="https://grabaseat.co.nz/flights" target="_self">outdoor</a></li>
+            <li><a href="https://grabaseat.co.nz/flights" target="_self">office</a></li>
+            <li><a href="https://grabaseat.co.nz/flights" target="_self">industrial</a></li>
+        </ul>
+    </div>
     <!-- Modal -->
     <style>
+        .af-main-body .modal {
+            background: rgba(0,0,0,0.6);
+        }
         .modal-dialog {
             width: 615px !important;
             margin: 75px auto !important;
@@ -453,7 +663,7 @@
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <img ng-src="/resource/{[{imageList.hammock}]}" class="thumbnail">
+                <img src="https://grabaseat.co.nz/resource/75e2fdf3-b257-46df-ab34-28ea4d8de279" class="thumbnail">
             </div>
         </div>
     </div>

@@ -41,8 +41,8 @@ module.exports = function(grunt) {
         },
         htmlmin: {
             app:          {
-                src:        'aprilFoolsPartialOriginal.html',
-                dest:       'dist/aprilFoolsPartialOriginal.html',
+                src:        'aprilFoolsPartialOriginal2.html',
+                dest:       'dist/aprilFoolsPartialOriginal2.html',
                 options:
                      {
                         collapseBooleanAttributes:      true,
@@ -62,12 +62,12 @@ module.exports = function(grunt) {
         },
         ngtemplates: {
             app:          {
-                src:        'dist/aprilFoolsPartialOriginal.html',
-                dest:       'dist/aprilfools.js',
+                src:        'dist/aprilFoolsPartialOriginal2.html',
+                dest:       'dist/aprilfools2.js',
                 options:    {
                     htmlmin:  {
                         collapseBooleanAttributes:      true,
-                        collapseWhitespace:             true,
+                        collapseWhitespace:             false,
                         removeAttributeQuotes:          true,
                         removeComments:                 true, // Only if you don't use comment directives!
                         removeEmptyAttributes:          true,

@@ -18,7 +18,9 @@
     <script src="https://code.angularjs.org/1.5.0/angular-resource.min.js"></script>
 
     <script>
-        var app = angular.module('app',[]);
+        var app = angular.module('app',['$interpolateProvider',function($interpolateProvider){
+            $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
+        }]);
     </script>
 
 </head>
@@ -34,77 +36,6 @@
 
     }]);
 
-
-
-    app.controller('afController',['$scope','$compile',function($scope,$compile){
-        $scope.showPrank = false;
-        $scope.dealCaption = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' +
-        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ';
-
-        $scope.afdata = [
-            {
-                title : 'Multi-Couloured Hammock',
-                imgsrc : 'img/hammock.jpeg',
-                caption : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                price : '599',
-                type : 'snow'
-            },
-            {
-                title : 'Industrial Ski-Lift Chair',
-                imgsrc : 'img/ski-lift-header.png',
-                caption : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                price : '599',
-                type : 'snow'
-            },
-            {
-                title : 'Monza Cane Chair',
-                imgsrc : 'img/download.jpeg',
-                caption : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                price : '99',
-                type : 'mediterrainian'
-
-            },
-            {
-                title : 'Rattan Single Lounger with side table',
-                imgsrc : 'img/outdoor_lounger.jpg',
-                caption : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                price : '99',
-                type : 'islands'
-
-            },
-            {
-                title : 'Lilly Lounge Chair',
-                imgsrc : 'img/ski-lift-header.png',
-                caption : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                price : '99',
-                type : 'city'
-
-            },
-            {
-                title : 'Stylish Bar Stool',
-                imgsrc : 'img/bar_stool_grey.jpg',
-                caption : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-                price : '99',
-                type : 'aussie'
-            }
-        ];
-
-        $scope.dealClicked = function(){
-            $scope.showPrank = true;
-        };
-
-        $scope.getHtmlPartial = function(){
-            console.log('returning partial');
-            return 'aprilFoolsPartialOriginal.html';
-        };
-
-//        angular.element(document).injector().invoke(function($compile) {
-//            var elem = angular.element(document.getElementById('afMainContainer'));
-//            $compile(elem)($scope);
-//        });
-
-    }]);
-
     window.onload = function(e){
         console.log("window.onload", e, Date.now());
     };
@@ -117,7 +48,8 @@
 <div id="afMainContainer" ng-controller="afController" style="background: #f5f5f5;position: absolute;z-index: 100000;top:0;left:0;width:100%;height:100%">
     <ng-include src="'aprilFoolsPartialOriginal.html'"></ng-include>
 </div>
-</body>
 
 </body>
+
+
 </html>

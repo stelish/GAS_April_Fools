@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>April Fools</title>
+    <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <style>
+        .blue-gradient-btn{
+            background-image: linear-gradient( #00baeb,#0096e0 );
+            border-bottom-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            padding: 4px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10px;
+            border-bottom: solid 2px #555;
+            border-left: solid 1px #555;
+            border-top: solid 1px #555;
+            border-right: solid 1px #555;
+        }
+        body{
+            background: #c2edfa;
+        }
+        .container{
+            width: 1200px !important;
+            padding: 0;
+        }
+        .main-body{
+            background-color: white;
+            height: 100%;
+            min-height: 1000px;
+            -webkit-box-shadow: 0 0 10px #6D8791;
+            box-shadow: 0 0 10px #6D8791;
+            max-width: 885px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .bottom-nav{
+            background-image:
+            linear-gradient(
+                    #00b7ea,#008cdd
+            );
+            height: 100px;
+
+        }
+
+        .bottom-nav-top{
+            height: 70px;
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .bottom-nav-bottom{
+            padding-left: 30px;
+            padding-right: 20px;
+            height: 30px;
+            width: 100%;
+            display: inline-flex;
+        }
+
+        .bottom-nav-bottom:first-child{
+            background: #00baeb;
+            max-width: 30px;
+        }
+
+        .bottom-nav-bottom-item{
+            background-image: linear-gradient( #00baeb,#0096e0 );
+            width: 215px;
+            height: 30px;
+            border: solid 1px #00799b;
+            border-top-right-radius: 10px;
+            margin-left: -10px;
+            border-right: solid 3px #00799b;
+            color: black;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: bold;
+            font-size: 11px;
+            padding-top: 8px;
+        }
+
+        .search-box{
+            background: #96bf31;
+            height: 35px;
+            width: 400px;
+            border: solid 1px #878787;
+            border-radius: 10px;
+            margin-top: 20px;
+            padding-left: 10px;
+            padding-right: 15px;
+            padding-top: 5px;
+            display: inline-flex;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        .search-box-input{
+            background-color: white;
+            height: 24px;
+            width: 200px;
+            border-bottom-left-radius: 8px;
+            margin-left: 15px;
+            border-bottom: solid 2px #888;
+        }
+        .search-box-btn{
+            width: 30px;
+            height: 24px;
+            margin-left: -10px;
+        }
+
+        .main-caption{
+            padding: 20px 15px 5px 15px;
+            height: 170px;
+        }
+
+        .main-banner-title{
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 100%;
+            height: 100px;
+
+        }
+        .main-caption-description{
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .main-caption-description h4{
+            font-weight: bold;
+            margin-bottom: 5px;
+            margin-top: 20px;
+        }
+        .main-banner-title-inner{
+            font-size: 55px;
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+            background-color: #00a0e0;
+            font-weight: bold;
+            box-shadow: 3px 3px 0 black;
+            margin-top: 15px;
+        }
+
+
+
+    </style>
+    <script type="text/javascript">
+        function toggleAFSlider() {
+            var afSlider = document.getElementById('af-slider');
+            if(afSlider.className !== "af-slider af-slider-out" ){
+                afSlider.className = "af-slider af-slider-out";
+            }else{
+                afSlider.className = "af-slider af-slider-in";
+            }
+        }
+        function hideAFOverlay(){
+            document.getElementById("af-loading").style.display = 'none';
+        }
+        setTimeout(hideAFOverlay,2000);
+    </script>
+</head>
+<body>
+    <!-- loading overlay -->
+    <div id="af-loading" style="position: absolute;height: 100%;width: 100%;z-index: 250001;background: #f5f5f5;"></div>
+    <style>
+        .top-nav{
+            background-image:
+            linear-gradient(
+                    #e6e6e6,#b3b3b3
+            );
+            height: 25px;
+            width: 885px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .top-nav-hand{
+            padding-top: 2px;
+        }
+        .top-nav-items{
+            margin-left:15px;
+            font-size: 9px;
+            padding-top: 7px;
+            font-weight: bold;
+        }
+        .top-nav-items-right{
+            font-size: 9px;
+            padding-top: 7px;
+            font-weight: bold;
+        }
+        .glyphicon-shopping-cart{
+            font-size: 18px;
+            padding:2px;
+            margin-left: 10px;
+        }
+    </style>
+    <div class="container" data-toggle="modal" data-target="#myModal">
+        <div style="display: inline-flex;">
+            <!-- banner ads -->
+            <style>
+                .banner-ad{
+                    width: 130px;
+                    height: 330px;
+                    background: #8cbe4f;
+                    margin-top: 200px;
+                    position: relative;
+                }
+
+                .banner-ad-caption{
+                    width: 120px;
+                    height: 180px;
+                    border: solid 3px white;
+                    border-top-left-radius: 12px;
+                    border-top-right-radius: 12px;
+                    border-bottom-right-radius: 12px;
+                    margin-top: 60px;
+                    margin-left: 5px;
+                    padding:5px;
+                }
+                .banner-ad-title img{
+                    max-width: 125px;
+                    margin-left: -10px;
+                    margin-top: -10px;
+                }
+                .banner-ad-subtitile img{
+                    margin-left: -2px;
+                    max-width: 110px;
+                }
+
+                .banner-ad-caption-text{
+                    font-size: 12px;
+                    color: white;
+                    font-weight: bold;
+                    margin-top:5px;
+                }
+
+                .banner-ad-bubble{
+                    background-color: #138755;
+                    width: 45px;
+                    height: 45px;
+                    border-bottom-right-radius: 50%;
+                    border-top-right-radius: 50%;
+                    border-bottom-left-radius: 50%;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 12px;
+                    margin-top: -20px;
+                    margin-left: 65px;
+                    padding: 10px 5px;
+                    text-align: center;
+                    line-height: 1.0;
+                }
+
+                .banner-ad-logo{
+                    margin-top: 40px;
+                    margin-left: 45px;
+                }
+
+            </style>
+            <!-- left -->
+            <div class="banner-ad visible-md visible-lg">
+                <div class="banner-ad-caption">
+                    <div class="banner-ad-title"><img src="img/AreYou.png"></div>
+                    <div class="banner-ad-subtitile"><img src="img/lookingFor.png"></div>
+                    <div class="banner-ad-caption-text">the Grabaseat that sells flights? <br> Click <u>here</u></div>
+                </div>
+                <div class="banner-ad-bubble">Grab it!</div>
+                <div class="banner-ad-logo"><img src="img/vgrablogohorizontal.png" style="max-width: 80px"></div>
+            </div>
+            <div class="main-body">
+                <!--nav -->
+                <div class="top-nav">
+                    <div class="pull-left" style="display: inline-flex">
+                        <div class="top-nav-hand"><img src="img/hand-click.png" style="max-width:16px;"></div>
+                        <div class="top-nav-items">
+                            Click & Collect &nbsp; | &nbsp; Store hours &nbsp; | &nbsp; Help
+                        </div>
+                    </div>
+
+                    <div class="pull-right" style="display: inline-flex">
+                        <div class="top-nav-items-right">
+                            Login &nbsp; | &nbsp; Register &nbsp; |
+                        </div>
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                    </div>
+
+                </div>
+
+                <div class="bottom-nav">
+                    <div class="bottom-nav-top">
+                        <div class="pull-left"><img src="img/fake-gas-logo.png" style="max-height: 60px;margin-top: 5px"></div>
+                        <div class="search-box pull-right">
+                            <div style="margin-top:5px;">
+                                Search more of our range:
+                            </div>
+                            <div class="search-box-input" style="z-index: 10"></div>
+                            <div class="search-box-btn blue-gradient-btn" style="z-index: 11">Go</div>
+                        </div>
+
+                    </div>
+                    <div class="bottom-nav-bottom">
+                        <div class="bottom-nav-bottom-item" style="z-index: 15;max-width: 40px;font-size: 20px;padding: 2px;"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></div>
+                        <div class="bottom-nav-bottom-item" style="z-index: 14">lounge</div>
+                        <div class="bottom-nav-bottom-item" style="z-index: 13">dining</div>
+                        <div class="bottom-nav-bottom-item" style="z-index: 12">outdoor</div>
+                        <div class="bottom-nav-bottom-item" style="z-index: 11">office</div>
+                    </div>
+
+                </div>
+
+                <!-- caption -->
+                <div class="main-caption">
+                    <div class="main-caption-img col-md-3 visible-md visible-lg">
+                        <img src="img/man-in-chair.png" style="max-height:160px;">
+                    </div>
+                    <div class="main-caption-description col-md-9">
+                        <h4>Welcome to Grabaseat</h4>
+                        Do you need to furnish your home in style? Are you after a comfortable seat to enjoy TV and movies. Or are you simply tired of standing around? Whatever you’re looking for, you’ve landed in the right place. Grabaseat is stacked with indoor chairs, outdoor chairs, indoor / outdoor combos, outdoor / indoor combos, plus a range of unique designer and novelty chairs to suit you and your lifestyle. And all at great prices. Want to see more? Then pull up a seat and check out our full range here.
+                    </div>
+                </div>
+
+                <!-- banner title -->
+                <div class="main-banner-title">
+                    <div class="main-banner-title-inner">
+                        latest seat specials!
+                    </div>
+                </div>
+
+                <style>
+                    .main-list{
+                        padding-left: 15px;
+                        padding-right: 15px;
+                    }
+
+                    .main-list-ul{
+                        list-style: none;
+                        /*display: inline-flex;*/
+                        /*flex-wrap: wrap;*/
+                        padding:0;
+                    }
+
+                    .main-list-ul-li{
+                        height: 230px;
+                        border: solid 1px #555;
+                        border-radius: 8px;
+                        margin: 5px 10px;
+                        width: 405px;
+                        padding: 10px;
+                    }
+                    .main-list-caption{
+                        font-size: 10px;
+                        font-weight: bold;
+                        padding: 0;
+                    }
+
+                    .main-list-caption h3{
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        padding-top: 0;
+                        margin-top: 5px;
+                        margin-bottom: 3px;
+                    }
+
+                    .main-list-btn{
+                        text-transform: uppercase;
+                        color: white;
+                        min-width: 100px;
+                        font-size: 12px;
+                        padding: 1px;
+
+                    }
+                    .main-list-seats{
+                        text-transform: uppercase;
+                        color: #00a0e0;
+                        font-weight: bold;
+                        font-size: 14px;
+                    }
+                    .main-list-img{
+                        padding: 0;
+                        margin-top: -15px;
+                    }
+
+                    .main-list-img img{
+                        max-width: 140px;
+                    }
+                </style>
+
+                <!-- list -->
+                <div class="main-list">
+                    <ul class="main-list-ul">
+                        <li class="main-list-ul-li col-md-6">
+                            <div class="main-list-img col-md-5"><img src="img/fold-up-chair.png"></div>
+                            <div class="main-list-caption col-md-7">
+                                <h3>fold-up seat</h3>
+                                Want to sit here? Want to sit over there? You can, with this fold-up seat. Just find your spot, unfold, and be seated.<br><br>
+
+                                Featuring strong, weather-proof, double stitched fabric wrapped around a lightweight alloy frame. When it’s time to move on, simply fold and slip into the carry bag supplied. Ideal for travellers.
+                                <div style="margin-top:30px;">
+                                    <div class="main-list-seats pull-left">1 seat left</div>
+                                    <div class="main-list-btn blue-gradient-btn pull-right">bargain <span class="glyphicon glyphicon-play" aria-hidden="true"></span></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="main-list-ul-li col-md-6">
+                            <div class="main-list-img col-md-5"><img src="img/cane-chair.png">
+                            </div>
+                            <div class="main-list-caption col-md-7">
+                                <h3>Cane Seat</h3>
+                                Want to sit here? Want to sit over there? You can, with this fold-up seat. Just find your spot, unfold, and be seated.<br><br>
+
+                                Featuring strong, weather-proof, double stitched fabric wrapped around a lightweight alloy frame. When it’s time to move on, simply fold and slip into the carry bag supplied. Ideal for travellers.
+                                <div style="margin-top:30px;">
+                                    <div class="main-list-seats pull-left">4 seats left</div>
+                                    <div class="main-list-btn blue-gradient-btn pull-right">bargain <span class="glyphicon glyphicon-play" aria-hidden="true"></span></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="main-list-ul-li col-md-6">
+                            <div class="main-list-img col-md-5"><img src="img/new-hammock.png" style="max-width: 160px; margin-top: 10px; margin-left: -5px"></div>
+                            <div class="main-list-caption col-md-7">
+                                <h3>Hammock</h3>
+                                Turn off the phone, kick off your shoes and get a taste for the horizontal life with this quality handwoven hammock. <br><br>
+
+                                Available in a range of summer friendly colours, this super comfortable hammock will have you switching to instant holiday mode - wherever you are.
+                                <div style="margin-top:45px;">
+                                    <div class="main-list-seats pull-left">3 seats left</div>
+                                    <div class="main-list-btn blue-gradient-btn pull-right">bargain <span class="glyphicon glyphicon-play" aria-hidden="true"></span></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="main-list-ul-li col-md-6">
+                            <div class="main-list-img col-md-5"><img src="img/wooden-chair.png"></div>
+                            <div class="main-list-caption col-md-7">
+                                <h3>The Seat</h3>
+                                If a seat with four legs, a base and a backrest is all you want, you’re in luck.<br><br>
+
+                                This seat is one of our most popular…seats. With a cushion often described as ‘very comfortable’ and four rock-solid legs, this unassuming seat has been charming sitters for years. Available in a range of fashionable colours.
+                                <div style="margin-top:30px;">
+                                    <div class="main-list-seats pull-left">7 seats left</div>
+                                    <div class="main-list-btn blue-gradient-btn pull-right">bargain <span class="glyphicon glyphicon-play" aria-hidden="true"></span></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="main-list-ul-li col-md-6">
+                            <div class="main-list-img col-md-5"><img src="img/ski-lift-new.png" style="max-width: 160px; margin-top: 10px; margin-left: -5px"></div>
+                            <div class="main-list-caption col-md-7">
+                                <h3>ski-lift seat</h3>
+                                Live the high life at home! This one-off ski-lift seat has been tastefully refurbished by our team of engineer / designers and is ready to transport your living area to the summit of   designer style. This is bound to become your ‘go to’ seat, après work, or for a lazy weekend.
+                                <div style="margin-top:60px;">
+                                    <div class="main-list-seats pull-left">2 seats left</div>
+                                    <div class="main-list-btn blue-gradient-btn pull-right">bargain <span class="glyphicon glyphicon-play" aria-hidden="true"></span></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="main-list-ul-li col-md-6">
+                            <div class="main-list-img col-md-5"><img src="img/red-stool.png"></div>
+                            <div class="main-list-caption col-md-7">
+                                <h3>the stool</h3>
+                                Perch on this beauty and it’s easy to imagine you’re at the bar of an Italian cafe or the counter of a diner in the USA. This stool is at home almost anywhere. It is truly the chameleon of the seating world.<br><br>
+
+                                It’s strong and easily transportable, so you can have the best seat in the house - anywhere in the house.
+                                <div style="margin-top:30px;">
+                                    <div class="main-list-seats pull-left">1 seat left</div>
+                                    <div class="main-list-btn blue-gradient-btn pull-right">bargain <span class="glyphicon glyphicon-play" aria-hidden="true"></span></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <!-- right -->
+            <div class="banner-ad visible-md visible-lg">
+                <div class="banner-ad-caption">
+                    <div class="banner-ad-title"><img src="img/AreYou.png"></div>
+                    <div class="banner-ad-subtitile"><img src="img/lookingFor.png"></div>
+                    <div class="banner-ad-caption-text">the Grabaseat that sells flights? <br> Click <u>here</u></div>
+                </div>
+                <div class="banner-ad-bubble">Grab it!</div>
+                <div class="banner-ad-logo"><img src="img/vgrablogohorizontal.png" style="max-width: 80px"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <style>
+        .af-main-body .modal {
+            background: rgba(0,0,0,0.6);
+        }
+        .modal-dialog {
+
+        }
+        .modal-content{
+            width: 615px !important;
+            margin: 75px auto !important;
+            height: 300px !important;
+            background: #8cbe4f;
+        }
+        .modal-ad-caption{
+            width: 320px;
+            height: 120px;
+            border: solid 3px white;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+            margin-top: -30px;
+            margin-left: 85px;
+            padding: 10px;
+        }
+        .modal-ad-logo{
+            margin-top: 25px;
+            margin-left: 520px;
+        }
+        .modal-ad-bubble{
+            background-color: #138755;
+            width: 45px;
+            height: 45px;
+            border-bottom-right-radius: 50%;
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            margin-top: -70px;
+            margin-left: 385px;
+            padding: 12px 5px;
+            text-align: center;
+            line-height: 1.0;
+        }
+        .modal-ad-caption-text{
+            font-size: 12px;
+            color: white;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    </style>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div>
+                    <img src="img/just-kidding.png">
+                </div>
+                <div class="modal-ad-caption">
+                    <div class="modal-ad-caption-text">Don't worry, Grabaseat is still the place to grab awesome deals on air fares. <br><br> BTW, today's deals are seriously good.<br>No joke! Check em out <u>here.</u></div>
+                </div>
+                <div class="modal-ad-bubble">Grab it!</div>
+                <div class="modal-ad-logo"><img src="img/vgrablogohorizontal.png" style="max-width: 80px"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
