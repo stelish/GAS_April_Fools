@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>April Fools</title>
     <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
     <!-- Latest compiled and minified CSS -->
@@ -31,7 +33,7 @@
             background: #c2edfa;
         }
         .container{
-            width: 1200px !important;
+            /*width: 1200px !important;*/
             padding: 0;
         }
         .main-body{
@@ -93,7 +95,7 @@
         .search-box{
             background: #96bf31;
             height: 35px;
-            width: 400px;
+            /*width: 400px;*/
             border: solid 1px #878787;
             border-radius: 10px;
             margin-top: 20px;
@@ -178,7 +180,7 @@
                     #e6e6e6,#b3b3b3
             );
             height: 25px;
-            width: 885px;
+            width: 100%;
             padding-left: 10px;
             padding-right: 10px;
         }
@@ -296,8 +298,8 @@
 
                 <div class="bottom-nav">
                     <div class="bottom-nav-top">
-                        <div class="pull-left"><img src="img/fake-gas-logo.png" style="max-height: 60px;margin-top: 5px"></div>
-                        <div class="search-box pull-right">
+                        <div class="pull-left col-md-6"><img src="img/fake-gas-logo.png" style="max-height: 60px;margin-top: 5px"></div>
+                        <div class="search-box pull-right col-md-6">
                             <div style="margin-top:5px;">
                                 Search more of our range:
                             </div>
@@ -348,11 +350,11 @@
                     }
 
                     .main-list-ul-li{
-                        height: 230px;
+                        min-height: 230px;
                         border: solid 1px #555;
                         border-radius: 8px;
-                        margin: 5px 10px;
-                        width: 405px;
+                        /*margin: 5px 10px;*/
+                        /*width: 405px;*/
                         padding: 10px;
                     }
                     .main-list-caption{
@@ -391,6 +393,223 @@
                     .main-list-img img{
                         max-width: 140px;
                     }
+
+                    @media (max-width: 800px){
+                        .main-body {
+                            max-width: 768px;
+                            width: 100%;
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                        .main-list-caption {
+                            height: 150px;
+                        }
+                    }
+
+                    @media (max-width: 600px){
+                        .main-body {
+                            max-width: 600px;
+                        }
+                        .modal-content{
+                            width: 580px !important;
+                        }
+
+                        .modal-content img{
+                            max-width: 580px;
+                        }
+
+                        .modal-ad-caption {
+                            width: 570px !important;
+                            margin-left: 5px !important;
+                            margin-top: 0 !important;
+                        }
+                        .modal-ad-logo {
+                            margin-top: 80px !important;
+                            margin-left: 480px !important;
+                        }
+                    }
+
+                    @media (max-width: 420px){
+                        .main-body {
+                            max-width: 370px;
+                            width: 100%;
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                        .bottom-nav {
+                            height: 150px;
+                        }
+                        .search-box {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            padding-left: 10px;
+                            font-size: 9px;
+                        }
+
+                        .bottom-nav-bottom {
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                        .main-caption {
+                            height: 280px;
+                        }
+                        .main-banner-title {
+                            height: 250px;
+                        }
+                        .main-list-caption {
+                            height: 200px;
+                        }
+                        .modal-content{
+                            width: 300px !important;
+                        }
+
+                        .modal-content img{
+                            max-width: 300px;
+                        }
+
+                        .modal-ad-caption {
+                            width: 290px !important;
+                            margin-left: 5px !important;
+                            margin-top: 0 !important;
+                        }
+                        .modal-ad-logo {
+                            margin-top: 80px !important;
+                            margin-left: 205px !important;
+                        }
+                    }
+
+                    @media (max-width: 384px){
+                        .main-body {
+                            max-width: 384px;
+                        }
+                    }
+
+                    @media (max-width: 375px){
+                        .main-body {
+                            max-width: 375px;
+                            width: 100%;
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                        .bottom-nav {
+                            height: 150px;
+                        }
+                        .search-box {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            padding-left: 10px;
+                            font-size: 8px;
+                        }
+                        .top-nav-items {
+                            font-size: 8px;
+                        }
+                        .bottom-nav-bottom {
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                        .main-caption {
+                            height: 280px;
+                        }
+                        .main-banner-title {
+                            height: 250px;
+                        }
+                        .main-list-caption {
+                            height: 200px;
+                        }
+                        .modal-content{
+                            width: 300px !important;
+                        }
+
+                        .modal-content img{
+                            max-width: 300px;
+                        }
+
+                        .modal-ad-caption {
+                            width: 290px !important;
+                            margin-left: 5px !important;
+                            margin-top: 0 !important;
+                        }
+                        .modal-ad-logo {
+                            margin-top: 80px !important;
+                            margin-left: 205px !important;
+                        }
+
+                    }
+
+                    @media (max-width: 360px){
+                        .main-body {
+                            max-width: 360px;
+                        }
+                        .modal-content{
+                            width: 300px !important;
+                        }
+
+                        .modal-content img{
+                            max-width: 300px;
+                        }
+
+                        .modal-ad-caption {
+                            width: 290px !important;
+                            margin-left: 5px !important;
+                            margin-top: 0 !important;
+                        }
+                        .modal-ad-logo {
+                            margin-top: 80px !important;
+                            margin-left: 205px !important;
+                        }
+                    }
+
+                    @media (max-width: 320px){
+                        .main-body {
+                            max-width: 320px;
+                            width: 100%;
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                        .bottom-nav {
+                            height: 150px;
+                        }
+                        .search-box {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            padding-left: 10px;
+                        }
+                        .top-nav-items {
+                            font-size: 8px;
+                        }
+                        .bottom-nav-bottom {
+                            padding-left: 0;
+                            padding-right: 0;
+                        }
+                        .main-caption {
+                            height: 280px;
+                        }
+                        .main-banner-title {
+                            height: 250px;
+                        }
+                        .main-list-caption {
+                            height: 200px;
+                        }
+                        .modal-content{
+                            width: 300px !important;
+                        }
+
+                        .modal-content img{
+                            max-width: 300px;
+                        }
+
+                        .modal-ad-caption {
+                            width: 290px !important;
+                            margin-left: 5px !important;
+                            margin-top: 0 !important;
+
+                        }
+                        .modal-ad-logo {
+                            margin-top: 80px !important;
+                            margin-left: 205px !important;
+                        }
+                    }
+
                 </style>
 
                 <!-- list -->
@@ -501,7 +720,7 @@
 
         }
         .modal-content{
-            width: 615px !important;
+            width: 615px;
             margin: 75px auto !important;
             height: 300px !important;
             background: #8cbe4f;
